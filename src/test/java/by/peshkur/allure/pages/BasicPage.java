@@ -1,21 +1,14 @@
 package by.peshkur.allure.pages;
 
-import com.codeborne.selenide.Condition;
-import org.openqa.selenium.By;
-
 import static com.codeborne.selenide.Selenide.$;
 
 public class BasicPage {
 
     public void clickButton(String text) {
-        $(By.xpath("//div[text()='" + text + "Let me hack!']")).click();
+        $("input[data-marker='login-form/login/input']").setValue("+79663758587");
+        $("input[data-marker='login-form/password/input']").setValue("dgdhdklrOL12");
+        $("button[data-marker='login-form/submit']").click();
+
     }
 
-    public void clickButtonSpan(String text) {
-        $(By.xpath("//span[text()='" + text + "']/..")).click();
-    }
-
-    public void contentIsVisible(String text) {
-        $(By.xpath("//*[text()='" + text + "']")).shouldBe(Condition.visible);
-    }
 }
